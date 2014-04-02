@@ -104,7 +104,8 @@ module.exports = function(passport) {
                         email: profile.emails[0].value,
                         username: profile.username,
                         provider: 'facebook',
-                        facebook: profile._json
+                        facebook: profile._json,
+	                    roles: ['authenticated']
                     });
                     user.save(function(err) {
                         if (err) console.log(err);
